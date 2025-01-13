@@ -6,10 +6,7 @@ plugins {
 }
 
 buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
+
     dependencies {
         classpath(libs.gradle)
         classpath(libs.kotlin.gradle.plugin)
@@ -19,4 +16,5 @@ buildscript {
         classpath (libs.androidx.navigation.safe.args.gradle.plugin)
 
     }
+
 }

@@ -1,8 +1,8 @@
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.0.21"
     id ("androidx.navigation.safeargs.kotlin")
 
 
@@ -10,18 +10,20 @@ plugins {
 
 android {
     namespace = "com.cenkeraydin.countries"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.cenkeraydin.countries"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    dataBinding{
+        enable = true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -53,7 +55,6 @@ dependencies {
 
 
     implementation (libs.androidx.room.runtime)
-    implementation (libs.androidx.legacy.support.v4)
     kapt (libs.androidx.room.compiler)
     implementation (libs.androidx.room.ktx)
     implementation (libs.kotlinx.coroutines.core)
@@ -61,7 +62,6 @@ dependencies {
     implementation (libs.androidx.navigation.fragment.ktx)
     implementation (libs.androidx.navigation.ui.ktx)
 
-    implementation (libs.material.v110)
 
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
@@ -72,8 +72,7 @@ dependencies {
 
     implementation (libs.glide)
 
-    implementation (libs.palette.v7)
-    implementation (libs.design)
+
 
     implementation (libs.androidx.preference)
 }
