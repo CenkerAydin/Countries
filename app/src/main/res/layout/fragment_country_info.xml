@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.CountryInfoFragment">
+
+        <ImageView
+            android:id="@+id/country_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitCenter"
+            android:minHeight="200dp"
+            android:src="@mipmap/ic_launcher"
+            android:paddingTop="10dp">
+
+        </ImageView>
+        
+        <TextView
+            android:id="@+id/country_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/country_iv"
+            android:text="Country Name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/country_capital_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/country_name_tv"
+            android:text="Country Capital"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/country_region_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/country_capital_tv"
+            android:text="Country Region"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/country_currency_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/country_region_tv"
+            android:text="Country Currency"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/country_language_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/country_currency_tv"
+            android:text="Country Language"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp">
+
+        </TextView>
+    </RelativeLayout>
+</layout>
