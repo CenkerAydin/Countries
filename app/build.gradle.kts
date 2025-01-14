@@ -75,4 +75,6 @@ dependencies {
 
 
     implementation (libs.androidx.preference)
+    implementation (libs.androidx.swiperefreshlayout)
+
 }
