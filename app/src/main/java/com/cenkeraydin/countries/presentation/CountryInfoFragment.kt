@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.cenkeraydin.countries.databinding.FragmentCountryInfoBinding
+import com.cenkeraydin.countries.util.downloadFromUrl
+import com.cenkeraydin.countries.util.placeHolderProgressBar
 
 
 class CountryInfoFragment : Fragment() {
@@ -26,22 +28,18 @@ class CountryInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        viewModel = ViewModelProvider(this)[CountryInfoViewModel::class.java]
-        viewModel.getDataFromRoom()
-        observeLiveData()
         arguments?.let {
             countryUuid = CountryInfoFragmentArgs.fromBundle(it).countryUuid
         }
+        viewModel = ViewModelProvider(this)[CountryInfoViewModel::class.java]
+        viewModel.getDataFromRoom(countryUuid)
+        observeLiveData()
+
     }
     private fun observeLiveData(){
-        viewModel.country.observe(viewLifecycleOwner){countries ->
+        viewModel.countryLiveData.observe(viewLifecycleOwner){countries ->
             countries?.let {
-                binding.countryNameTv.text = countries.country_name
-                binding.countryCapitalTv.text = countries.country_capital
-                binding.countryCurrencyTv.text = countries.country_currency
-                binding.countryLanguageTv.text = countries.country_language
-                binding.countryRegionTv.text = countries.country_region
+              binding.country =countries
             }
         }
     }
